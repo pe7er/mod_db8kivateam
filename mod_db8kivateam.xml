@@ -240,7 +240,125 @@
                        default="100"
                        label="MOD_DB8KIVATEAM_LOANSLOGOWIDTH_LABEL"
                        description="MOD_DB8KIVATEAM_LOANSLOGOWIDTH_DESC" />
-                                                             
+
+                
+                       <field name="loans_show_activity"
+                              type="list"
+                              default="1"                 
+                              label="MOD_DB8KIVATEAM_LOANSSHOWACTIVITY_LABEL"
+                              description="MOD_DB8KIVATEAM_LOANSSHOWACTIVITY_DESC">
+                           <option value="1">JYES</option>
+                           <option value="0">JNO</option>
+                       </field>                
+
+                       <field name="loans_show_sector"
+                              type="list"
+                              default="1"                 
+                              label="MOD_DB8KIVATEAM_LOANSSHOWSECTOR_LABEL"
+                              description="MOD_DB8KIVATEAM_LOANSSHOWSECTOR_DESC">
+                           <option value="1">JYES</option>
+                           <option value="0">JNO</option>
+                       </field>       
+                
+                       <field name="loans_show_theme"
+                              type="list"
+                              default="1"                 
+                              label="MOD_DB8KIVATEAM_LOANSSHOWTHEME_LABEL"
+                              description="MOD_DB8KIVATEAM_LOANSSHOWTHEME_DESC">
+                           <option value="1">JYES</option>
+                           <option value="0">JNO</option>
+                       </field>       
+                
+                       <field name="loans_show_use"
+                              type="list"
+                              default="1"                 
+                              label="MOD_DB8KIVATEAM_LOANSSHOWUSE_LABEL"
+                              description="MOD_DB8KIVATEAM_LOANSSHOWUSE_DESC">
+                           <option value="1">JYES</option>
+                           <option value="0">JNO</option>
+                       </field>       
+
+                       <field name="loans_show_posted_date"
+                              type="list"
+                              default="1"                 
+                              label="MOD_DB8KIVATEAM_LOANSSHOWPOSTED_LABEL"
+                              description="MOD_DB8KIVATEAM_LOANSSHOWPOSTED_DESC">
+                           <option value="1">JYES</option>
+                           <option value="0">JNO</option>
+                       </field>       
+
+                       <field name="loans_show_planned_expiration_date"
+                              type="list"
+                              default="1"                 
+                              label="MOD_DB8KIVATEAM_LOANSSHOWEXPIRATION_LABEL"
+                              description="MOD_DB8KIVATEAM_LOANSSHOWEXPIRATION_DESC">
+                           <option value="1">JYES</option>
+                           <option value="0">JNO</option>
+                       </field>       
+                
+                       <field name="loans_show_loan_amount"
+                              type="list"
+                              default="1"                 
+                              label="MOD_DB8KIVATEAM_LOANSSHOWAMOUNT_LABEL"
+                              description="MOD_DB8KIVATEAM_LOANSSHOWAMOUNT_DESC">
+                           <option value="1">JYES</option>
+                           <option value="0">JNO</option>
+                       </field>       
+                
+                       <field name="loans_show_borrower_count"
+                              type="list"
+                              default="1"                 
+                              label="MOD_DB8KIVATEAM_LOANSSHOWBORROWER_LABEL"
+                              description="MOD_DB8KIVATEAM_LOANSSHOWBORROWER_DESC">
+                           <option value="1">JYES</option>
+                           <option value="0">JNO</option>
+                       </field>       
+                
+                       <field name="loans_show_lender_count"
+                              type="list"
+                              default="1"                 
+                              label="MOD_DB8KIVATEAM_LOANSSHOWLENDER_LABEL"
+                              description="MOD_DB8KIVATEAM_LOANSSHOWLENDER_DESC">
+                           <option value="1">JYES</option>
+                           <option value="0">JNO</option>
+                       </field>       
+                
+                       <field name="loans_show_country"
+                              type="list"
+                              default="1"                 
+                              label="MOD_DB8KIVATEAM_LOANSSHOWCOUNTRY_LABEL"
+                              description="MOD_DB8KIVATEAM_LOANSSHOWCOUNTRY_DESC">
+                           <option value="1">JYES</option>
+                           <option value="0">JNO</option>
+                       </field>       
+                
+                       <field name="loans_show_status"
+                              type="list"
+                              default="1"                 
+                              label="MOD_DB8KIVATEAM_LOANSSHOWLOANSTATUS_LABEL"
+                              description="MOD_DB8KIVATEAM_LOANSSHOWLOANSTATUS_DESC">
+                           <option value="1">JYES</option>
+                           <option value="0">JNO</option>
+                       </field>       
+                
+                       <field name="loans_show_funded_amount"
+                              type="list"
+                              default="1"                 
+                              label="MOD_DB8KIVATEAM_LOANSSHOWFUNDEDAMOUNT_LABEL"
+                              description="MOD_DB8KIVATEAM_LOANSSHOWFUNDEDAMOUNT_DESC">
+                           <option value="1">JYES</option>
+                           <option value="0">JNO</option>
+                       </field>       
+                
+                       <field name="loans_show_paid_amount"
+                              type="list"
+                              default="1"                 
+                              label="MOD_DB8KIVATEAM_LOANSSHOWPAIDAMOUNT_LABEL"
+                              description="MOD_DB8KIVATEAM_LOANSSHOWPAIDAMOUNT_DESC">
+                           <option value="1">JYES</option>
+                           <option value="0">JNO</option>
+                       </field>       
+                                                                                                                                                                                                                                                                                                                                                                                                                                                           
             </fieldset>
             
             <fieldset name="advanced">

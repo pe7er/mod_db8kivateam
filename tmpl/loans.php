@@ -9,55 +9,137 @@ defined('_JEXEC') or die;
 $document = JFactory::getDocument();
 // add minified CSS stylesheet (original CSS: db8socialmediashare_style.css)
 $document->addStyleSheet('modules/mod_db8kivateam/assets/db8kivateam_style.css');
+
+if ($params->get('loans_count') < count($loans)) {
+    $count = $params->get('loans_count', 5);
+} else {
+    $count = count($loans);
+}
 ?>
-
-<h3>Loans</h3>
 <div class="db8kivateam<?php echo $moduleclass_sfx; ?>">
+    <?php
+    for ($i = 0; $i <= ($count - 1); $i++) {
+        $loan = $loans[$i];
+        ?>
+        <article class="loanCard default vertical " id="biz_row_688646">
 
-    <?php foreach ($loans as $loan) { ?>
-    <article class="loanCard default vertical " id="biz_row_688646">
+            <?php if ($params->get('loans_showlogo')) { ?>
+                <a class="img img-s100 thumb" data-kv-trackevent="" target="_blank" href="http://www.kiva.org/lend/<?php echo $loan->id; ?>">
+                    <img src="http://s3-1.kiva.org/img/s100/<?php echo $loan->image->id; ?>.jpg" alt="<?php echo $loan->name; ?>" title="<?php echo $loan->name; ?>" 
+                         width="<?php echo $params->get('loans_logo_width', 100); ?>" height="<?php echo $params->get('loans_logo_height', 100); ?>">
+                </a>
+            <?php } ?>
 
-        <a class="img img-s100 thumb" data-kv-trackevent="" target="_blank" href="http://www.kiva.org/lend/<?php echo $loan->id; ?>">
-            <img src="http://s3-1.kiva.org/img/s100/<?php echo $loan->image->id; ?>.jpg" alt="<?php echo $loan->name; ?>" title="<?php echo $loan->name; ?>" width="100" height="100"></a>
-
-        <span class="info_status">
-            <div class="name">
-                <a href="http://www.kiva.org/lend/<?php echo $loan->id; ?>" target="_blank" title="<?php echo $loan->name ?>"><?php echo $loan->name; ?></a>				
-            </div>
-            <div class="info">
-                <div class="activity"><span class="icon-wrench"></span> <?php echo $loan->activity; ?></div>
-                <div class="sector"><span class="icon-pie"></span> <?php echo $loan->sector; ?></div>
-                <div class="theme"><span class="icon-folder-open"></span> <?php echo $loan->theme; ?></div>
-                <div class="use"><span class="icon-pie"></span> <?php echo $loan->use; ?></div>
-                <div class="planned_expiration_date"><span class="icon-pie"></span> <?php echo $loan->planned_expiration_date; ?></div>
-                <div class="loan_amount"><span class="icon-coin"></span> <?php echo $loan->loan_amount; ?></div>
-                <div class="borrower_count"><span class="icon-stats"></span> <?php echo $loan->borrower_count; ?></div>
-                <div class="lender_count"><span class="icon-bars"></span> <?php echo $loan->lender_count; ?></div>
-                
-                <div class="country">
-                    <span class="f16 py"></span><span class="icon-earth"></span>
-                    <a href="http://www.kiva.org/lend?countries=<?php echo $loan->location->country_code; ?>" 
-                       target="_blank" title="<?php echo $loan->location->country; ?>"><?php echo $loan->location->country; ?></a>
-                </div>									
-            </div>
-
-            <div class="status">
-
-                <div class="loanStatusSubView">
-                    <span class="status">Raised</span>
-                    <div class="raisedMeter meter">
-                        <div id="688646_bar" style="width:0%"></div>
-                    </div>
-
-                    <div id="688646_amount_raised" class="percentRaised raised ">
-                        <span id="688646_percent_paid" class="number">0%</span>
-                        repaid
-                    </div>
+            <span class="info_status">
+                <div class="name">
+                    <a href="http://www.kiva.org/lend/<?php echo $loan->id; ?>" target="_blank" title="<?php echo $loan->name ?>"><?php echo $loan->name; ?></a>				
                 </div>
+                <div class="info">
+                    <?php if ($params->get('loans_show_activity') && isset($loan->activity)) { ?>
+                        <div class="activity">
+                            <span class="icon-wrench"></span> 
+                            <span class="bold"><?php echo JText::_('MOD_DB8KIVATEAM_LOANSSHOWACTIVITY_LABEL'); ?></span>
+                            <?php echo $loan->activity; ?>
+                        </div>
+                    <?php } ?> 
 
-            </div>
+                    <?php if ($params->get('loans_show_sector') && isset($loan->sector)) { ?>
+                        <div class="sector">
+                            <span class="icon-pie"></span> 
+                            <span class="bold"><?php echo JText::_('MOD_DB8KIVATEAM_LOANSSHOWSECTOR_LABEL'); ?></span>                            
+                            <?php echo $loan->sector; ?>
+                        </div>
+                    <?php } ?> 
 
-        </span>
-    </article>
+                    <?php if ($params->get('loans_show_theme') && isset($loan->theme)) { ?>
+                        <div class="theme">
+                            <span class="icon-folder-open"></span>
+                            <span class="bold"><?php echo JText::_('MOD_DB8KIVATEAM_LOANSSHOWTHEME_LABEL'); ?></span>                            
+                            <?php echo $loan->theme; ?>
+                        </div>
+                    <?php } ?> 
+
+                    <?php if ($params->get('loans_show_use') && isset($loan->use)) { ?>
+                        <div class="use">
+                            <span class="icon-office"></span>
+                            <span class="bold"><?php echo JText::_('MOD_DB8KIVATEAM_LOANSSHOWUSE_LABEL'); ?></span>                            
+                            <?php echo $loan->use; ?>
+                        </div>
+                    <?php } ?> 
+
+                    <?php if ($params->get('loans_show_posted_date') && isset($loan->posted_date)) { ?>
+                        <div class="planned_expiration_date">
+                            <span class="icon-calendar"></span>
+                            <span class="bold"><?php echo JText::_('MOD_DB8KIVATEAM_LOANSSHOWPOSTED_LABEL'); ?></span>                            
+                            <?php echo substr($loan->posted_date, 0, 10); ?>
+                        </div>
+                    <?php } ?> 
+
+                    <?php if ($params->get('loans_show_planned_expiration_date') && isset($loan->planned_expiration_date)) { ?>
+                        <div class="planned_expiration_date">
+                            <span class="icon-alarm"></span>
+                            <span class="bold"><?php echo JText::_('MOD_DB8KIVATEAM_LOANSSHOWEXPIRATION_LABEL'); ?></span>                            
+                            <?php echo substr($loan->planned_expiration_date, 0, 10); ?>
+                        </div>
+                    <?php } ?> 
+
+                    <?php if ($params->get('loans_show_loan_amount') && isset($loan->loan_amount)) { ?>
+                        <div class="loan_amount">
+                            <span class="icon-coin"></span>
+                            <span class="bold"><?php echo JText::_('MOD_DB8KIVATEAM_LOANSSHOWAMOUNT_LABEL'); ?></span>                            
+                            <?php echo $loan->loan_amount; ?>
+                        </div>
+                    <?php } ?> 
+
+                    <?php if ($params->get('loans_show_borrower_count') && isset($loan->borrower_count)) { ?>
+                        <div class="borrower_count">
+                            <span class="icon-users"></span>
+                            <span class="bold"><?php echo JText::_('MOD_DB8KIVATEAM_LOANSSHOWBORROWER_LABEL'); ?></span>                            
+                            <?php echo $loan->borrower_count; ?>
+                        </div>
+                    <?php } ?> 
+
+                    <?php if ($params->get('loans_show_lender_count') && isset($loan->lender_count)) { ?>
+                        <div class="lender_count">
+                            <span class="icon-users"></span>
+                            <span class="bold"><?php echo JText::_('MOD_DB8KIVATEAM_LOANSSHOWLENDER_LABEL'); ?></span>                            
+                            <?php echo $loan->lender_count; ?>
+                        </div>
+                    <?php } ?> 
+
+                    <?php if ($params->get('loans_show_country') && isset($loan->country)) { ?>
+                        <div class="country">
+                            <span class="f16 py"></span><span class="icon-earth"></span>
+                            <a href="http://www.kiva.org/lend?countries=<?php echo $loan->location->country_code; ?>" 
+                               target="_blank" title="<?php echo $loan->location->country; ?>"><?php echo $loan->location->country; ?></a>
+                        </div>	
+                    <?php } ?> 
+
+                    <?php if ($params->get('loans_show_status') && isset($loan->status)) { ?>
+                        <div class="loan_status">
+                            <span class="icon-busy"></span>
+                            <span class="bold"><?php echo JText::_('MOD_DB8KIVATEAM_LOANSSHOWLOANSTATUS_LABEL'); ?></span>                            
+                            <?php echo $loan->status; ?>
+                        </div>
+                    <?php } ?> 
+
+                    <?php if ($params->get('loans_show_funded_amount') && isset($loan->funded_amount)) { ?>
+                        <div class="loan_status">
+                            <span class="icon-coin"></span>
+                            <span class="bold"><?php echo JText::_('MOD_DB8KIVATEAM_LOANSSHOWFUNDEDAMOUNT_LABEL'); ?></span>                            
+                            <?php echo $loan->funded_amount; ?>
+                        </div>
+                    <?php } ?> 
+
+                    <?php if ($params->get('loans_show_paid_amount') && isset($loan->paid_amount)) { ?>
+                        <div class="loan_status">
+                            <span class="icon-coin"></span>
+                            <span class="bold"><?php echo JText::_('MOD_DB8KIVATEAM_LOANSSHOWPAIDAMOUNT_LABEL'); ?></span>                            
+                            <?php echo $loan->paid_amount; ?>
+                        </div>
+                    <?php } ?> 
+                </div>
+            </span>
+        </article>
     <?php } ?>    
 </div>
