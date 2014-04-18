@@ -21,7 +21,7 @@ if ($params->get('loans_count') < count($loans)) {
     for ($i = 0; $i <= ($count - 1); $i++) {
         $loan = $loans[$i];
         ?>
-        <article class="loanCard default vertical " id="biz_row_688646">
+        <article class="loanCard default vertical ">
 
             <?php if ($params->get('loans_showlogo')) { ?>
                 <a class="img img-s100 thumb" data-kv-trackevent="" target="_blank" href="http://www.kiva.org/lend/<?php echo $loan->id; ?>">
