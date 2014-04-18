@@ -156,11 +156,6 @@
 
             </fieldset>
             <fieldset name="lenders">
-                <field name="lenders_title" 
-                       type="text"
-                       default=""
-                       label="MOD_DB8KIVATEAM_LENDERSTITLE_LABEL"
-                       description="MOD_DB8KIVATEAM_LENDERSTITLE_DESC" />
 
                 <field name="lenders_count" 
                        type="text"
@@ -168,14 +163,56 @@
                        label="MOD_DB8KIVATEAM_LENDERSCOUNT_LABEL"
                        description="MOD_DB8KIVATEAM_LENDERSCOUNT_DESC" />
 
-                                                             
+                <field name="lenders_showlogo"
+                       type="list"
+                       default="1"                 
+                       label="MOD_DB8KIVATEAM_LENDERSSHOWLOGO_LABEL"
+                       description="MOD_DB8KIVATEAM_LENDERSSHOWLOGO_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>                
+
+                <field name="lenders_logo_height" 
+                       type="text"
+                       default="100"
+                       label="MOD_DB8KIVATEAM_LENDERSLOGOHEIGHT_LABEL"
+                       description="MOD_DB8KIVATEAM_LENDERSLOGOHEIGHT_DESC" />
+                                
+                <field name="lenders_logo_width" 
+                       type="text"
+                       default="100"
+                       label="MOD_DB8KIVATEAM_LENDERSLOGOWIDTH_LABEL"
+                       description="MOD_DB8KIVATEAM_LENDERSLOGOWIDTH_DESC" />
+                
+                <field name="lenders_show_whereabouts"
+                       type="list"
+                       default="1"                 
+                       label="MOD_DB8KIVATEAM_LENDERSSHOWWHEREABOUTS_LABEL"
+                       description="MOD_DB8KIVATEAM_LENDERSSHOWWHEREABOUTS_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>                
+
+                <field name="lenders_show_country_code"
+                       type="list"
+                       default="1"                 
+                       label="MOD_DB8KIVATEAM_LENDERSSHOWCOUNTRYCODE_LABEL"
+                       description="MOD_DB8KIVATEAM_LENDERSSHOWCOUNTRYCODE_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>                
+
+                <field name="lenders_show_join_date"
+                       type="list"
+                       default="1"                 
+                       label="MOD_DB8KIVATEAM_LENDERSSHOWJOINDATE_LABEL"
+                       description="MOD_DB8KIVATEAM_LENDERSSHOWJOINDATE_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>                
+                                                     
             </fieldset>
             <fieldset name="loans">
-                <field name="loans_title" 
-                       type="text"
-                       default=""
-                       label="MOD_DB8KIVATEAM_LOANSTITLE_LABEL"
-                       description="MOD_DB8KIVATEAM_LOANSTITLE_DESC" />
 
                 <field name="loans_count" 
                        type="text"
@@ -183,6 +220,26 @@
                        label="MOD_DB8KIVATEAM_LOANSCOUNT_LABEL"
                        description="MOD_DB8KIVATEAM_LOANSCOUNT_DESC" />
                 
+                <field name="loans_showlogo"
+                       type="list"
+                       default="1"                 
+                       label="MOD_DB8KIVATEAM_LOANSSHOWLOGO_LABEL"
+                       description="MOD_DB8KIVATEAM_LOANSSHOWLOGO_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>                
+
+                <field name="loans_logo_height" 
+                       type="text"
+                       default="100"
+                       label="MOD_DB8KIVATEAM_LOANSLOGOHEIGHT_LABEL"
+                       description="MOD_DB8KIVATEAM_LOANSLOGOHEIGHT_DESC" />
+                                
+                <field name="loans_logo_width" 
+                       type="text"
+                       default="100"
+                       label="MOD_DB8KIVATEAM_LOANSLOGOWIDTH_LABEL"
+                       description="MOD_DB8KIVATEAM_LOANSLOGOWIDTH_DESC" />
                                                              
             </fieldset>
             

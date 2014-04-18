@@ -13,20 +13,21 @@ require_once __DIR__ . '/helper.php';
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
 
 $display = $params->get('display');
-print "display=".$display;
-if($display == 1){
- echo"team";
+
+if($display == 1)
+{
     $team = modDB8KivaTeamHelper::getTeam($params);
     require JModuleHelper::getLayoutPath('mod_db8kivateam', $params->get('layout', 'team'));    
 
-}elseif($display == 2){
- echo"member";   
+}
+elseif($display == 2)
+{
     $members = modDB8KivaTeamHelper::getMembers($params);
     require JModuleHelper::getLayoutPath('mod_db8kivateam', $params->get('layout', 'members'));
-    
-}elseif($display == 3){
-echo"loan";    
+
+}
+elseif($display == 3)
+{
     $loans = modDB8KivaTeamHelper::getLoans($params);
-    require JModuleHelper::getLayoutPath('mod_db8kivateam', $params->get('layout', 'loans'));
-    
+    require JModuleHelper::getLayoutPath('mod_db8kivateam', $params->get('layout', 'loans'));    
 }
