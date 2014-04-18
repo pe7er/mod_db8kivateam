@@ -37,16 +37,16 @@ abstract class modDb8KivaTeamHelper {
         return $team;
     }
 
-    public static function getMembers(&$params) {
+    public static function getLenders(&$params) {
 
         $team = modDB8KivaTeamHelper::getTeam($params);
 
         $jsonurl = 'http://api.kivaws.org/v1/teams/' . $team->id . '/lenders.json';
         $result = modDB8KivaTeamHelper::getJSON($jsonurl);
 
-        $members = $result->lenders;
+        $lenders = $result->lenders;
 
-        return $members;
+        return $lenders;
     }
 
     public static function getLoans(&$params) {

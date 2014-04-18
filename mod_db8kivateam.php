@@ -22,8 +22,8 @@ if($display == 1)
 }
 elseif($display == 2)
 {
-    $members = modDB8KivaTeamHelper::getMembers($params);
-    require JModuleHelper::getLayoutPath('mod_db8kivateam', $params->get('layout', 'members'));
+    $lenders = modDB8KivaTeamHelper::getLenders($params);
+    require JModuleHelper::getLayoutPath('mod_db8kivateam', $params->get('layout', 'lenders'));
 
 }
 elseif($display == 3)
