@@ -1,10 +1,11 @@
 <?php
 /**
- * @package	mod_db8kivateam
- * @author	Peter Martin, www.db8.nl
- * @copyright	Copyright (C) 2014 Peter Martin. All rights reserved.
- * @license	GNU General Public License version 2 or later.
+ * @package     mod_db8kivateam
+ * @author      Peter Martin, https://db8.nl
+ * @copyright   Copyright (C) 2014-2022 Peter Martin. All rights reserved.
+ * @license     GNU General Public License version 2 or later.
  */
+
 defined('_JEXEC') or die;
 
 if ($params->get('lenders_count') < count($lenders)) {

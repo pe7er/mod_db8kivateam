@@ -2,12 +2,12 @@
 <extension type="module" version="3.2" client="site" method="upgrade">
     <name>MOD_DB8KIVATEAM</name>
     <author>Peter Martin</author>
-    <creationDate>April 2014</creationDate>
-    <copyright>Copyright (C) 2014 by Peter Martin. All rights reserved.</copyright>
+    <creationDate>November 2022</creationDate>
+    <copyright>Copyright (C) 2014-2022 by Peter Martin. All rights reserved.</copyright>
     <license>GNU General Public License version 2</license>
     <authorEmail>joomla@db8.nl</authorEmail>
-    <authorUrl>www.db8.nl</authorUrl>
-    <version>1.1</version>
+    <authorUrl>https://db8.nl</authorUrl>
+    <version>1.2.0</version>
     <description>MOD_DB8KIVATEAM_XML_DESCRIPTION</description>
 
     <files>
@@ -400,7 +400,9 @@
 
         </fields>
     </config>
+
     <updateservers>
-        <server type="extension" priority="1" name="mod_db8kivateam">http://www.db8.nl/updates/mod_db8kivateam.xml</server>
+        <server type="extension" name="mod_db8kivateam">https://raw.githubusercontent.com/pe7er/mod_db8kivateam/master/update.xml</server>
     </updateservers>
+
 </extension>

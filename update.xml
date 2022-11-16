@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<updates>
+    <update>
+        <name>mod_db8kivateam 1.2.0</name>
+        <description>Module to display Team data from the micro-finance website www.kiva.org: Team description, Team members or Team Loans.</description>
+        <element>mod_db8kivateam</element>
+        <type>module</type>
+        <client>site</client>
+        <version>1.2.0</version>
+        <infourl title="mod_db8kivateam">https://github.com/pe7er/mod_db8kivateam</infourl>
+        <downloads>
+            <downloadurl type="full" format="zip">https://github.com/pe7er/mod_db8sitelastmodified/raw/master/downloads/mod_db8kivateam-j3-v1.2.0.zip</downloadurl>
+        </downloads>
+        <sha512>a3aad06a9be8267a3ba0655029d0f5d03924049c1587972b0deaff0d3ec6e3cbc93c366e09340524ee29228ca0d1f119a7eebf6775e4235eafbf3f64aad9760f</sha512>
+        <tags>
+            <tag>stable</tag>
+        </tags>
+        <maintainer>Peter Martin</maintainer>
+        <maintainerurl>https://db8.nl</maintainerurl>
+        <php_minimum>7.4.0</php_minimum>
+        <targetplatform name="joomla" version="((3\.(9|10|11))"/>
+    </update>
+
+</updates>

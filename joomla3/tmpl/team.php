@@ -1,13 +1,16 @@
 <?php
 /**
- * @package	mod_db8kivateam
- * @author	Peter Martin, www.db8.nl
- * @copyright	Copyright (C) 2014 Peter Martin. All rights reserved.
- * @license	GNU General Public License version 2 or later.
+ * @package     mod_db8kivateam
+ * @author      Peter Martin, https://db8.nl
+ * @copyright   Copyright (C) 2014-2022 Peter Martin. All rights reserved.
+ * @license     GNU General Public License version 2 or later.
  */
+
+use Joomla\CMS\Factory;
+
 defined('_JEXEC') or die;
-$document = JFactory::getDocument();
-// add minified CSS stylesheet (original CSS: db8socialmediashare_style.css)
+
+$document = Factory::getDocument();
 $document->addStyleSheet('modules/mod_db8kivateam/assets/db8kivateam_style.css');
 ?>
 <div class="db8kivateam<?php echo $moduleclass_sfx; ?>">

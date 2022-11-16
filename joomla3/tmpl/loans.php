@@ -1,13 +1,16 @@
 <?php
 /**
- * @package	mod_db8kivateam
- * @author	Peter Martin, www.db8.nl
- * @copyright	Copyright (C) 2014 Peter Martin. All rights reserved.
- * @license	GNU General Public License version 2 or later.
+ * @package     mod_db8kivateam
+ * @author      Peter Martin, https://db8.nl
+ * @copyright   Copyright (C) 2014-2022 Peter Martin. All rights reserved.
+ * @license     GNU General Public License version 2 or later.
  */
+
+use Joomla\CMS\Factory;
+
 defined('_JEXEC') or die;
-$document = JFactory::getDocument();
-// add minified CSS stylesheet (original CSS: db8socialmediashare_style.css)
+
+$document = Factory::getDocument();
 $document->addStyleSheet('modules/mod_db8kivateam/assets/db8kivateam_style.css');
 
 if ($params->get('loans_count') < count($loans)) {
@@ -25,7 +28,7 @@ if ($params->get('loans_count') < count($loans)) {
 
             <?php if ($params->get('loans_showlogo')) { ?>
                 <a class="img img-s100 thumb" data-kv-trackevent="" target="_blank" href="http://www.kiva.org/lend/<?php echo $loan->id; ?>">
-                    <img src="http://s3-1.kiva.org/img/s100/<?php echo $loan->image->id; ?>.jpg" alt="<?php echo $loan->name; ?>" title="<?php echo $loan->name; ?>" 
+                    <img src="https://www-kiva-org-0.freetls.fastly.net/img/s100/<?php echo $loan->image->id; ?>.jpg" alt="<?php echo $loan->name; ?>" title="<?php echo $loan->name; ?>"
                          width="<?php echo $params->get('loans_logo_width', 100); ?>" height="<?php echo $params->get('loans_logo_height', 100); ?>">
                 </a>
             <?php } ?>
